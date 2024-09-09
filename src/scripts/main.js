@@ -1,15 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const times = [
+    "Grêmio",
+    "Internacional",
+    "Caxias",
+    "Brasil de Pelotas",
+    "São José",
+    "Ypiranga",
+    "Novo Hamburgo",
+    "Pelotas",
+    "Juventude",
+    "Aimoré",
+    "São Luiz",
+    "Lajeado",
+    "Brasil de Farroupilha",
+    "Glória",
+    "Tupi",
+    "Veranópolis",
+  ];
+
   document
     .getElementById("form-sorteador")
     .addEventListener("submit", function (evento) {
       evento.preventDefault();
-      let numeroMaximo = document.getElementById("numero-maximo").value;
-      numeroMaximo = parseInt(numeroMaximo);
 
-      let numeroAleatorio = Math.random() * numeroMaximo;
-      numeroAleatorio = Math.floor(numeroAleatorio + 1);
+      const timeSorteado = times[Math.floor(Math.random() * times.length)];
 
-      document.getElementById("resultado-valor").innerText = numeroAleatorio;
+      document.getElementById("resultado-valor").innerText = timeSorteado;
       document.querySelector(".resultado").style.display = "block";
     });
 });
